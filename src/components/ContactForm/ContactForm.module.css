@@ -2,7 +2,7 @@
   width: 400px;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   text-align: center;
   /* margin: 0 auto; */
 }

@@ -11,7 +11,7 @@ function App() {
   return (
     <div className={s.app}>
       <h1 className={s.title}>Phonebook</h1>
-      <ToastContainer autoClose={3000} />
+      <ToastContainer autoClose={3000} position="top-center" />
       <ContactForm />
       <h2 className={s.titleContacts}>Contacts</h2>
       <Filter />
