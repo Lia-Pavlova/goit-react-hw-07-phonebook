@@ -2,12 +2,14 @@
   width: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   text-align: center;
+  /* margin: 0 auto; */
 }
 
 .label {
   display: flex;
+  position: relative;
   color: #524240;
   text-shadow: -1px -1px 10px rgba(59, 22, 4, 0.76);
   font-weight: 600;
@@ -23,7 +25,7 @@
   line-height: 40px;
   border-width: 0;
   border-radius: 10px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #524240;
   outline: #524240;
 }
@@ -65,4 +67,25 @@
   text-shadow: 0 0 10px #000000be;
 
   border: solid 1px #fcfcfc;
+}
+
+.error {
+  text-align: center;
+  /* display: flex; */
+  width: 100px;
+  position: absolute;
+  top: 75%;
+  transform: translateY(-50%);
+  right: 10px;
+  font-size: 10px;
+  color: orange;
+  text-shadow: -1px 0px 0px #ea2a2a93;
+  margin-top: -10px;
+}
+.error::before {
+  display: inline;
+  content: '⚠ ';
+  font-size: 15px;
+  color: #ea2a2ab2;
+  text-shadow: 0px 0px 0px #ea2a2a93;
 }

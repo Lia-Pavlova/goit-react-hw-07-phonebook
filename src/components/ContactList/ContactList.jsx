@@ -1,31 +1,31 @@
-import React from 'react'
-import { connect } from 'react-redux'
+import ContactItem from './ContactListItem'
 
-import phoneOperations from '../../redux/phoneOperations'
-import phoneSelectors from '../../redux/phoneSelectors'
+import { useGetContactsQuery } from '../../services/contactsAPI'
+import { useSelector } from 'react-redux'
 
+import Loader from '../Loader/Loader.jsx'
 import s from './ContactList.module.css'
 
-const ContactList = ({ contacts, onDeleteContacts }) => (
-  <ul className={s.contacts}>
-    {contacts.map(({ id, name, number }) => (
-      <li className={s.item} key={id}>
-        <p className={s.name}>{name}</p>
-        <p className={s.tel}>{number}</p>
-        <button className={s.btnDel} onClick={() => onDeleteContacts(id)}>
-          Delete
-        </button>
-      </li>
-    ))}
-  </ul>
-)
+export default function ContactList() {
+  const filter = useSelector((state) => state.filter)
 
-const mapStateToProps = (state) => ({
-  contacts: phoneSelectors.getVisibleContacts(state),
-})
+  const { data, isFetching } = useGetContactsQuery()
 
-const mapDispatchToProps = (dispatch) => ({
-  onDeleteContacts: (id) => dispatch(phoneOperations.deleteContacts(id)),
-})
+  return (
+    <>
+      {isFetching && <Loader />}
 
-export default connect(mapStateToProps, mapDispatchToProps)(ContactList)
+      {data && !isFetching && (
+        <ul className={s.contacts}>
+          {data
+            .filter((contact) =>
+              contact.name.toLocaleLowerCase().includes(filter.toLowerCase()),
+            )
+            .map((contact) => (
+              <ContactItem key={contact.id} contact={contact} />
+            ))}
+        </ul>
+      )}
+    </>
+  )
+}

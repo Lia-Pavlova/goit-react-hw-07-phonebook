@@ -2,6 +2,10 @@
   width: 600px;
 }
 
+.title {
+  padding-top: 30px;
+}
+
 .item {
   display: flex;
   align-items: center;
