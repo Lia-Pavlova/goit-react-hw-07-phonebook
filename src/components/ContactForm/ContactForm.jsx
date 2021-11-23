@@ -69,7 +69,7 @@ export default function ContactsForm() {
           title="The phone number must be digits and may contain spaces, dashes, parentheses and may start with +"
           {...register('phone', {
             required: true,
-            pattern: /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/,
+            pattern: /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}[-.\s]?\d{1,9}[-.\s]?\d{1,9}[-.\s]?\d{1,9}[-.\s]?\d{1,9}[-.\s]?\d{1,9}/,
           })}
           className={s.input}
         />
@@ -77,7 +77,7 @@ export default function ContactsForm() {
           <p className={s.error}>This field is required</p>
         )}
         {errors?.phone?.type === 'pattern' && (
-          <p className={s.error}>Numeric characters only</p>
+          <p className={s.error}> Minimum 10 numeric characters</p>
         )}
       </label>
       <button type="submit" className={s.btnAdd}>

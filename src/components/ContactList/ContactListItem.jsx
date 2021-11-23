@@ -8,14 +8,19 @@ export default function ContactItem({ contact }) {
   return (
     <li className={s.item}>
       <p className={s.name}>{contact.name}</p>
-      <p className={s.tel}>{contact.phone}</p>
-      <button
-        className={s.btnDel}
-        id={contact.id}
-        onClick={() => delItem(contact.id)}
-      >
-        Delete
-      </button>
+      <div>
+        <a className={s.tel} href={`tel:${contact.phone}`}>
+          {contact.phone}
+        </a>
+
+        <button
+          className={s.btnDel}
+          id={contact.id}
+          onClick={() => delItem(contact.id)}
+        >
+          Delete
+        </button>
+      </div>
     </li>
   )
 }

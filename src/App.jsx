@@ -3,6 +3,7 @@ import ContactList from './components/ContactList/ContactList'
 import Filter from './components/Filter/Filter'
 import ContactForm from './components/ContactForm/ContactForm'
 import { ToastContainer } from 'react-toastify'
+
 import '../node_modules/react-toastify/dist/ReactToastify.css'
 
 import s from './App.module.css'
