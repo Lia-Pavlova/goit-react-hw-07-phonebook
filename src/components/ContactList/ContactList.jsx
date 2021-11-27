@@ -14,7 +14,9 @@ export default function ContactList() {
   return (
     <>
       {isFetching && <Loader />}
-
+      {data?.length === 0 && !isFetching && (
+        <p className={s.count}>No contacts added yet</p>
+      )}
       {data && !isFetching && (
         <ul className={s.contacts}>
           {data

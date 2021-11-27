@@ -24,8 +24,21 @@
   color: #524240d7;
 }
 
+.clock {
+  /* display: flex;
+  align-items: center;
+  flex-direction: column; */
+
+  width: 700px;
+  margin-top: -10px;
+  margin-right: 90px;
+  padding: 0px;
+  text-shadow: -4px -3px 5px rgba(59, 22, 4, 0.425);
+  color: #e22f18d7;
+}
+
 .titleContacts {
-  margin-top: 50px;
+  margin-top: 10px;
   font-weight: 700;
   font-size: 30px;
   color: #524240;

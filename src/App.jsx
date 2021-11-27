@@ -3,6 +3,7 @@ import ContactList from './components/ContactList/ContactList'
 import Filter from './components/Filter/Filter'
 import ContactForm from './components/ContactForm/ContactForm'
 import { ToastContainer } from 'react-toastify'
+import Clock from 'components/Clock/Clock'
 
 import '../node_modules/react-toastify/dist/ReactToastify.css'
 
@@ -12,6 +13,9 @@ function App() {
   return (
     <div className={s.app}>
       <h1 className={s.title}>Phonebook</h1>
+      <h2 className={s.clock}>
+        <Clock />
+      </h2>
       <ToastContainer autoClose={3000} position="top-center" />
       <ContactForm />
       <h2 className={s.titleContacts}>Contacts</h2>

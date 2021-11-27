@@ -33,7 +33,7 @@
 /* "Add contact" button */
 
 .btnAdd {
-  margin: auto;
+  margin: 20px auto;
   background: linear-gradient(
     to right,
     #e9ce367a 0%,
